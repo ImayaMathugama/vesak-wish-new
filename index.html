@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Department - Digital Vesak Wishes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+    <h1>🪔 IT Department Vesak Wishes</h1>
+    <div class="subtitle">Digital Wish Generation System</div>
+    
+    <div id="input-stage">
+        <input type="text" id="empId" placeholder="Enter Employee ID " autocomplete="off">
+        <button onclick="generateWish()">Receive Blessing</button>
+        <div id="error-msg" class="error">Employee ID not found. Please try again!</div>
+    </div>
+
+    <div id="wish-box" class="wish-box">
+        <img id="wish-img" src="" alt="Vesak Blessing" class="wish-image">
+        
+        <div class="greeting" id="user-name">Theruwan Saranai!</div>
+        <div class="message" id="wish-text">...</div>
+        <button onclick="resetForm()" style="margin-top: 20px; background: transparent; color: #94a3b8; border: 1px solid #334155;">Try Another ID</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
