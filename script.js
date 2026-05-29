@@ -3463,6 +3463,13 @@
 
     };
 
+const wishes = [
+    { text: "May the light of Vesak bring peace, wisdom, and happiness to your life.", image: "wish4.jpg" },
+    { text: "Wishing you and your family a blessed Vesak filled with compassion and joy.", image: "wish5.jpg" },
+    { text: "May this Vesak guide you on a path of kindness, mindfulness, and serenity.", image: "wish6.jpg" },
+    { text: "Theruwan Saranai! May your days be filled with blessings and inner calm.", image: "wish7.jpg" },
+    { text: "May the teachings of the Buddha inspire your heart and brighten your journey.", image: "wish8.jpg" }
+];
 
 function generateWish() {
     const idInput = document.getElementById('empId').value.trim().toUpperCase();
