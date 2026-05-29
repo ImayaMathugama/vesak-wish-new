@@ -3464,6 +3464,42 @@
     };
 
 
+// 1. Vesak Wishes Array (Extracted from your original file logic)
+const wishes = [
+    {
+        text: "මෙම උතුම් වෙසක් මංගල්‍යය ඔබ සැමට සාමය, සතුට සහ නිවනින් සැනසෙන පින්බර කාලසීමාවක් වේවා!",
+        image: "images/wish1.jpg"
+    },
+    {
+        text: "ඔබ සැමට පින්බර වෙසක් මංගල්‍යයක් වේවා! උතුම් තෙරුවන් සරණින් ජීවිතය ආලෝකමත් වේවා!",
+        image: "images/wish2.jpg"
+    },
+    {
+        text: "Wishing you a peaceful and blessed Vesak! May the teachings of Lord Buddha guide your path towards serenity.",
+        image: "images/wish3.jpg"
+    },
+    {
+        text: "වෙසක් මංගල්‍යයේ උතුම් ආමිස හා ප්‍රතිපත්ති පූජාවන්ගෙන් ඔබේ ජීවිතය සැපවත් වේවා!",
+        image: "images/wish4.jpg"
+    },
+    {
+        text: "May the divine blessings of Lord Buddha bring peace, health, and prosperity to your life. Happy Vesak!",
+        image: "images/wish5.jpg"
+    },
+    {
+        text: "ලොව්තුරු බුදු සමිඳුන්ගේ ශ්‍රී සද්ධර්මයේ ආලෝකය ඔබගේ සහ පවුලේ සැමගේ ජීවිත වලට සැනසීම උදාකරත්වා!",
+        image: "images/wish6.jpg"
+    },
+    {
+        text: "May the full moon of Vesak bring you closer to the path of peace, contentment, and spiritual joy.",
+        image: "images/wish7.jpg"
+    },
+    {
+        text: "සැනසිලිදායක පින්බර වෙසක් මංගල්‍යයක් වේවා! සිත් තුල කරුණාව සහ දයාව පිරී ඉතිරේවා!",
+        image: "images/wish8.jpg"
+    }
+];
+
 function generateWish() {
     const idInput = document.getElementById('empId').value.trim().toUpperCase();
     const errorMsg = document.getElementById('error-msg');
@@ -3497,4 +3533,51 @@ function resetForm() {
     document.getElementById('empId').value = '';
     document.getElementById('input-stage').style.display = 'block';
     document.getElementById('wish-box').style.display = 'none';
+}
+Pro-Tips for Testing:
+Save the updated script.js and refresh your browser.
+
+Type an ID from your code (like 24197) to verify it pulls up "Nadeeka" along with the text and image container.
+
+Make sure you eventually swap out my placeholder image URLs ([https://images.unsplash.com/](https://images.unsplash.com/)...) with your actual internal web images or local paths.
+
+// 3. Wish Generator Logic
+function generateWish() {
+    const idInput = document.getElementById('empId').value.trim().toUpperCase();
+    const errorMsg = document.getElementById('error-msg');
+    const inputStage = document.getElementById('input-stage');
+    const wishBox = document.getElementById('wish-box');
+    
+    if (employeeDb[idInput]) {
+        errorMsg.style.display = 'none';
+        inputStage.style.display = 'none';
+        
+        // Set user name in Sinhala greeting format
+        document.getElementById('user-name').innerText = `තෙරුවන් සරණයි, ${employeeDb[idInput]}!`;
+        
+        // Pick a random wish object from the wishes array above
+        const randomWishObject = wishes[Math.floor(Math.random() * wishes.length)];
+        
+        // Inject text and image source securely
+        document.getElementById('wish-text').innerText = randomWishObject.text;
+        
+        const imgElement = document.getElementById('wish-img');
+        imgElement.src = randomWishObject.image;
+        imgElement.style.display = 'block'; // Ensure image visibility is explicitly overridden
+        
+        wishBox.style.display = 'block';
+    } else {
+        errorMsg.style.display = 'block';
+    }
+}
+
+// 4. Reset/Clear Form Functionality
+function resetForm() {
+    document.getElementById('empId').value = '';
+    document.getElementById('input-stage').style.display = 'block';
+    document.getElementById('wish-box').style.display = 'none';
+    
+    const imgElement = document.getElementById('wish-img');
+    imgElement.src = '';
+    imgElement.style.display = 'none'; // Re-hide image container on reset
 }
