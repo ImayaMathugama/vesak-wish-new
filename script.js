@@ -3534,12 +3534,7 @@ function resetForm() {
     document.getElementById('input-stage').style.display = 'block';
     document.getElementById('wish-box').style.display = 'none';
 }
-Pro-Tips for Testing:
-Save the updated script.js and refresh your browser.
 
-Type an ID from your code (like 24197) to verify it pulls up "Nadeeka" along with the text and image container.
-
-Make sure you eventually swap out my placeholder image URLs ([https://images.unsplash.com/](https://images.unsplash.com/)...) with your actual internal web images or local paths.
 
 // 3. Wish Generator Logic
 function generateWish() {
